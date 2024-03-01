@@ -1,0 +1,46 @@
+﻿@page
+@model ContactModel
+@{
+}
+<h1>Liên hệ</h1>
+<hr />
+
+<div asp-validation-summary="All" ></div>
+<form method="post" asp-page="Contact" class="m-2 p-3 alert-danger" enctype="multipart/form-data">
+   <div class="mb-3 mt-3"> 
+        <label asp-for="@Model.customerInfo.CustomerName"></label>
+        <input asp-for="@Model.customerInfo.CustomerName" class="form-control" />
+        <span asp-validation-for="@Model.customerInfo.CustomerName"></span>
+   </div>
+    <div class="mb-3 mt-3">
+        <label asp-for="@Model.customerInfo.CustomerEmail"></label>
+        <input asp-for="@Model.customerInfo.CustomerEmail" class="form-control" />
+        <span asp-validation-for="@Model.customerInfo.CustomerEmail"></span>
+    </div>
+    <div class="mb-3 mt-3">
+        <label asp-for="@Model.customerInfo.YearOfBirth"></label>
+        <input asp-for="@Model.customerInfo.YearOfBirth" class="form-control" />
+        <span asp-validation-for="@Model.customerInfo.YearOfBirth"></span>
+    </div>
+    <div class="mb-3 mt-3">
+        <label asp-for="@Model.FileUploader"></label>
+        <input asp-for="@Model.FileUploader" class="form-control" />
+        <span asp-validation-for="@Model.FileUploader"></span>
+    </div>
+    <div class="mb-3 mt-3">
+        <label asp-for="@Model.FileUploaders"></label>
+        <input asp-for="@Model.FileUploaders" class="form-control" />
+        <span asp-validation-for="@Model.FileUploaders"></span>
+    </div>
+    <div class="mb-3 mt-3">
+      <button type="submit" class="btn btn-danger">Gửi thông tin</button>
+  </div>
+
+</form>
+<p>@Model.thongbao</p>
+<p>Thông tin nhận được</p>
+<ul class="">
+    <li>UserName: @Model.customerInfo.CustomerName</li>
+    <li>Email: @Model.customerInfo.CustomerEmail</li>
+    <li>YearOfBirth: @Model.customerInfo.YearOfBirth</li>
+</ul>
